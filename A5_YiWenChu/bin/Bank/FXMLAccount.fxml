@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Button?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+	prefHeight="500" fx:controller="Bank.AccountController"  >
+	
+	<top>
+		<VBox prefWidth="250" spacing="2" alignment="CENTER">
+			<children>
+				<Label text="ABC Bank System" />
+				<Label 
+					text="************************************************" />
+			</children>
+		</VBox>
+	</top>
+	
+	<left>
+		<VBox prefWidth="250" spacing="2">
+			<children>
+				<Label text="Select the Account:" />
+				<ComboBox fx:id="cmbAccount" prefHeight="24"/>
+			</children>
+		</VBox>
+	</left>
+	
+	<center>
+		<VBox prefWidth="250" spacing="2">
+			<children>
+				<Label text="Select Service Type:" />
+				<ListView fx:id="lstServiceType" prefHeight="48"/>
+				
+				<Label text="Amount:" />
+				<TextField fx:id="txtAmount" promptText="Enter the amount:" />
+				
+				<Label text="Balance:" />
+				<TextField fx:id="txtBalance" editable="false"/>
+				
+				<Label text="Interest Rate:" />
+				<TextField fx:id="txtRate" editable="false"/>
+				
+				<Button fx:id="btnUpdate" text="Update" 
+					maxWidth="Infinity" onAction="#update" />
+				<Button fx:id="btnExit" text="Exit" 
+					maxWidth="Infinity" />
+				<Button fx:id="btnSave" text="Save Transaction" 
+					maxWidth="Infinity" onAction="#save" />
+			</children>
+		</VBox>
+	</center>
+	
+	<bottom>
+		<VBox spacing="2" alignment="CENTER">
+		<children>
+			<Label text="Your Information" />
+			<Label text="************************************************" />
+			<Label text="Account:" />
+			<Label fx:id="lblAccount" />
+			<Label text="Service:" />
+			<Label fx:id="lblServiceType" />						
+		</children>
+		</VBox>	
+	</bottom>
+</BorderPane>
+
